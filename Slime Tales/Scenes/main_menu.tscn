@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cdlyfttn3y1br"]
+[gd_scene load_steps=21 format=3 uid="uid://cdlyfttn3y1br"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_3g4yc"]
 [ext_resource type="Texture2D" uid="uid://btci0vhdynoen" path="res://Assets/MenuBG.png" id="1_mp1qd"]
@@ -59,6 +59,32 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 shadow_size = 4
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7blqc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kaif"]
+bg_color = Color(0.483048, 0.303725, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1itf"]
+bg_color = Color(0.460611, 0.288765, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fdr8"]
+bg_color = Color(0.628812, 0.400049, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 4
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3mfwj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5w7j0"]
@@ -112,8 +138,8 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -487.0
-offset_top = -10.0
-offset_right = -222.0
+offset_top = -56.0
+offset_right = -250.0
 offset_bottom = 259.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -143,6 +169,17 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_lx5mu")
 text = "Options
 "
 
+[node name="About Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_0x0r6")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7blqc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8kaif")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f1itf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1fdr8")
+text = "ABOUT"
+
 [node name="Exit Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -157,4 +194,5 @@ text = "Exit
 
 [connection signal="pressed" from="VBoxContainer/Start Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options Button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/About Button" to="." method="_on_about_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit Button" to="." method="_on_exit_button_pressed"]
